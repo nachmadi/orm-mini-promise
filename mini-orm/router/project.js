@@ -20,19 +20,25 @@ router.get('/add',(req, res)=>{
 })
 
 router.post('/add',(req, res)=>{
-  modulProject.create({nama:'project 2', status:'pending', id_spv:'1'},err=>{
+  modulProject.create(req.body,err=>{
     //res.send('sukses');
     res.redirect('/project/add');
   })
 })
 
 router.get('/update/:id',(req, res)=>{
-  modulProject.findAll(allProjects=>{
+  modulProject.findById(id,project=>{
     //res.send(allProjects);
-    res.render('project',{projects:allProjects});
+    res.render('project_edit',{project:project});
   })
 })
 
+router.post('/update/:id',(req, res)=>{
+  modulProject.updatee(req.body,err=>{
+    //res.send('sukses');
+    res.redirect('/project/add');
+  })
+})
 
 
 module.exports = router;

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project</title>
+</head>
+<body>
+
+<h1>PROJECTS EDIT</h1>
+
+<form action="/project/update/<%=project.id%>" method="post">
+ nama: <input type="text" value = "<%=project.nama%>" name="nama"><br>
+ status: <input type="text" value = "<%=project.status%>" name="status"><br>
+ id Spv: <input type="text" value = "<%=project.id_spv%>" name="id_spv"><br>
+ <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
